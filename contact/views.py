@@ -1,7 +1,10 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse('Olá Mundo do Django')
+    return render(
+        request, 
+        'contact/index.html',
+    )
 
 
