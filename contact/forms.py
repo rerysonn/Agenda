@@ -31,6 +31,15 @@ class ContactForms(forms.ModelForm):
             }
         )
     )
+    email = forms.EmailField(
+        label= 'Email',
+        widget= forms.TextInput(
+            attrs= {
+                'class' : 'classe-a classe-b',
+                'placeholder' : 'Escreva o email'
+            }
+        )
+    )
 
     class Meta:
         model = models.Contact
@@ -38,6 +47,9 @@ class ContactForms(forms.ModelForm):
             'first_name',
             'last_name',
             'phone',
+            'email',
+            'category',
+            'description'
         )
 
     def clean(self):
