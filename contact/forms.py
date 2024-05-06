@@ -40,6 +40,15 @@ class ContactForms(forms.ModelForm):
             }
         )
     )
+    picture = forms.ImageField(
+        widget= forms.FileInput(
+            attrs={
+                'accept' : 'image/*'
+            }
+        )
+    )
+
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -52,7 +61,8 @@ class ContactForms(forms.ModelForm):
             'phone',
             'email',
             'category',
-            'description'
+            'description',
+            'picture'
         )
 
     def clean(self):
